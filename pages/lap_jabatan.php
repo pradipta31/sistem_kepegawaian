@@ -43,7 +43,7 @@ include 'left.php';
                                         <th style="width:200px; border:1px solid #000;">Jabatan</th>
                                         <th style="width:300px; border:1px solid #000;">Golongan</th>
                                         <th style="width:200px; border:1px solid #000;">Tingkat Ijazah</th>
-                                        <th style="width:200px; border:1px solid #000;">Pendidikan</th>
+                                        <th style="width:210px; border:1px solid #000;">Pendidikan</th>
                                     </tr>
 <?php  
                                 		$i=1;
