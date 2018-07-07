@@ -28,6 +28,7 @@ include 'left.php';
                                         <th><center>Jenis Cuti</center></th>
                                         <th><center>Tanggal</center></th>
                                         <th><center>Lama Cuti</center></th>
+                                        <th><center>Status</center></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,6 +49,15 @@ include 'left.php';
                                             <td style="width: 100px;"><?=$hasil['jns_cuti'];?></td>
                                             <td style="width: 200px; "><?=$hasil['tgl_cuti'];?></td>
                                             <td style="width: 100px;"><?=$hasil['lama_cuti'];?></td>
+                                            <td style="width: 100px;">
+                                                <?php
+                                                    if ($hasil['status'] == 1) {
+                                                        echo "<center style='color: green'>Setuju</center>";
+                                                    }else{
+                                                        echo "<center style='color: red'>Tidak Setuju</center>";
+                                                    }
+                                                ?>
+                                            </td>
                                         </tr>
                                 </tbody>
                                 <?php

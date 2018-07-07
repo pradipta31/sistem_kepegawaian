@@ -52,7 +52,15 @@ if (isset($_GET['edit'])) {
                                         </div>
                                         <div class="form-group">
                                             <label>Lama Cuti</label>
-                                            <input class="form-control" name="lama_cuti" value="<?=$hasil['lama_cuti']?>">
+                                            <input class="form-control" name="lama_cuti" value="<?=$hasil['lama_cuti'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <select class="form-control" name="status" value="<?=$hasil['status'];?>">
+                                                <option value="" <?= ($hasil['status'] == null) ? 'selected' : '' ; ?>>Belum Disetujui</option>
+                                                <option value="1" <?= ($hasil['status'] == 1) ? 'selected' : '' ; ?>>Disetujui</option>
+                                                <option value="0" <?= ($hasil['status'] == 0) ? 'selected' : '' ; ?>>Tidak Setuju</option>
+                                            </select>
                                         </div>
                                         
                                         <button type="reset" class="btn btn-danger">Reset </button>
@@ -86,6 +94,7 @@ if (isset($_POST ['save'])) {
 	$jns_cuti=$_POST['jns_cuti'];
     $tgl_cuti=$_POST['tgl_cuti'];
     $lama_cuti=$_POST['lama_cuti'];
+    $status = $_POST['status'];
 
     if ($nip_peg_lama=="") {
         echo "<script language= 'javascript'>alert('NIP Masih kosong !')</script>";
@@ -116,7 +125,7 @@ if (isset($_POST ['save'])) {
     } 
 	else 
 	{
-        $query="UPDATE tb_cuti SET nip_peg='$nip_peg_lama',nama_peg='$nama_peg',alamat='$alamat',telepon='$telepon',jns_cuti='$jns_cuti',tgl_cuti='$tgl_cuti',lama_cuti='$lama_cuti' WHERE kode_cuti='$nip_peg_edit'";
+        $query="UPDATE tb_cuti SET nip_peg='$nip_peg_lama',nama_peg='$nama_peg',alamat='$alamat',telepon='$telepon',jns_cuti='$jns_cuti',tgl_cuti='$tgl_cuti',lama_cuti='$lama_cuti', status='$status' WHERE kode_cuti='$nip_peg_edit'";
         $sql=mysqli_query($connect,$query);
         echo "<script>alert('Data berhasil diperbaharui');document.location='data_cuti.php';</script>";
     }

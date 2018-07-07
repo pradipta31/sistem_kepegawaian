@@ -30,6 +30,7 @@ include'left.php';
                                         <th>Jenis Cuti</th>
                                         <th>Tanggal Cuti</th>
                                         <th>Lama Cuti</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -41,17 +42,28 @@ include'left.php';
                                 			while ($hasil=mysqli_fetch_array($sql)) {
                                 	?>
 	                                    <tr>
-	                                        <td style="width: 70px;"><?=$i++?></td>
+	                                        <td><?=$i++?></td>
 	                                        <td style="width: 200px;"><?=$hasil['nip_peg']?></td>
                                             <td style="width: 200px;"><?=$hasil['nama_peg']?></td>
                                             <td style="width: 120px;"><?=$hasil['alamat']?></td>
                                             <td style="width: 100px;"><?=$hasil['telepon']?></td>
-                                            <td style="width: 100px;"><?=$hasil['jns_cuti']?></td>
-                                            <td style="width: 120px;"><?=$hasil['tgl_cuti']?></td>
-                                            <td style="width: 80px;"><?=$hasil['lama_cuti']?></td>
-	                                        <td style="width: 200px;">
+                                            <td><?=$hasil['jns_cuti']?></td>
+                                            <td><?=$hasil['tgl_cuti']?></td>
+                                            <td><?=$hasil['lama_cuti']?></td>
+                                            <td style="width: 200px">
+                                                <?php
+                                                    if ($hasil['status'] == null) {
+                                                        echo "<center class='alert alert-warning'>Belum Disetujui</center>";
+                                                    }elseif($hasil['status'] == 0){
+                                                        echo "<center class='alert alert-danger'>Tidak Disetujui</center>";
+                                                    }elseif($hasil['status'] == 1) {
+                                                        echo "<center class='alert alert-success'>Disetujui</center>";
+                                                    }
+                                                ?>
+                                            </td>
+	                                        <td style="width: 370px;">
 	              <a href="edit_cuti.php?edit=<?=$hasil['kode_cuti']?>" class="btn btn-primary">Edit</a>
-                  <a href="delete_cuti.php?delete=<?=$hasil['kode_cuti']?>" class="btn btn-primary" onclick="return confirm ('Yakin Ingin Menghapus Data ini ??')">Delete</a>
+                  <a href="delete_cuti.php?delete=<?=$hasil['kode_cuti']?>" class="btn btn-danger" onclick="return confirm ('Yakin Ingin Menghapus Data ini ??')">Hapus</a>
 	                                        </td>
 	                                    </tr>
                                 	<?php  
