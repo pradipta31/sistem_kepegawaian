@@ -51,31 +51,39 @@ include 'left.php';
                                         <div class="form-group">
                                         <label>jabatan</label>
                                             <select class="form-control" name="nama_jbt">
-                                            <?php  
-                                                $panggil_jbt="SELECT * FROM tb_jbt";
-                                                $sql=mysqli_query($connect,$panggil_jbt);
-                                                while ($hasil=mysqli_fetch_array($sql)) {
-                                            ?>
-                                                <option value="<?=$hasil['nama_jbt']?>"><?=$hasil['nama_jbt']?></option>
-                                            <?php  
-                                                }
-                                            ?>
-                                        </select>
+                                            <option value="Kepala Dinas">Kepala Dinas</option>
+                                            <option value="Kepala Seksi">Kepala Seksi</option>
+                                            <option value="kepala Bidang">Juru I/C</option>
+                                            <option value="Pengawas">Pengawas</option>
+                                            <option value="Instruktur">Instruktur</option>
+                                            <option value="Sekretaris">Sekretaris</option>
+                                            <option value="Staff">Staff</option>
+                                            <option value="Kasubag Umum">Kasubag Umum</option>
+                                            <option value="Supir">Supir</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                         <label>jgolongan</label>
+                                          <label>Golongan</label>
                                             <select class="form-control" name="golongan">
-                                            <?php  
-                                                $panggil_gol="SELECT * FROM tb_golongan";
-                                                $sql=mysqli_query($connect,$panggil_gol);
-                                                while ($hasil=mysqli_fetch_array($sql)) {
-                                            ?>
-                                                <option value="<?=$hasil['golongan']?>"><?=$hasil['golongan']?></option>
-                                            <?php  
-                                                }
-                                            ?>
-                                        </select>
-                                        </div>
+                                            <option value="Juru Muda I/A">Juru Muda I/A</option>
+                                            <option value="Juru Muda Tingkat I I/B">Juru Muda Tingkat I I/B</option>
+                                            <option value="Juru I/C">Juru I/C</option>
+                                            <option value="juru Tingkat I I/D">juru Tingkat I I/D</option>
+                                            <option value="Pengatur Muda II/A">Pengatur Muda II/A</option>
+                                            <option value="Pengatur Muda Tingkat I II/B">Pengatur Muda Tingkat I II/B</option>
+                                            <option value="Pengatur II/C">Pengatur II/C</option>
+                                            <option value="Pengatur Tingkat I II/D">Pengatur Tingkat I II/D</option>
+                                            <option value="Penata Muda III/A">Penata Muda III/A</option>
+                                            <option value="Penata Muda Tingakat I III/B">Penata Muda Tingakat I III/B</option>
+                                            <option value="Penata III/C">Penata III/C</option>
+                                            <option value="Penata Tingkat I III/D">Penata Tingkat I III/D</option>
+                                            <option value="Pembina IV/A">Pembina IV/A</option>
+                                            <option value="Pembina Tingkat I IV/B">Pembina Tingkat I IV/B</option>
+                                            <option value="Pembina Utama Muda IV/C">Pembina Utama Muda IV/C</option>
+                                            <option value="Pembina Utama Madya IV/D">Pembina Utama Madya IV/D</option>
+                                            <option value="Pembina Utama IV/D">Pembina Utama IV/D</option>
+                                            </select>
+                                            </div>
                                         <div class="form-group">
                                             <label>Tingkat Ijazah</label>
                                             <select class="form-control" name="t_ijazah">
