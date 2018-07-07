@@ -24,7 +24,8 @@ include"footer.php";
 <br>                
 <?php		
 $conn=new mysqli("localhost","root","","sie_kepegawaian");
-$jabatan=$conn->query("select * from tb_jabatan");
+
+$jabatan=$conn->query("select * from tb_jabatan WHERE nama_jbt='*'");
 $jumlah_jabatan=mysqli_num_rows($jabatan);
 ?>
 
@@ -39,10 +40,14 @@ $jumlah_jabatan=mysqli_num_rows($jabatan);
 
         var data = google.visualization.arrayToDataTable([
           ['jabatan', 'jumlah'],
+<<<<<<< HEAD
 		  ['kadis',    <?php echo $jumlah_jabatan;?>],
 		  ['sekretaris',    <?php echo $jumlah_jabatan;?>],
 		  ['staff',    <?php echo $jumlah_jabatan;?>],
 		  ['pengawasan',    <?php echo $jumlah_jabatan;?>]
+=======
+		  ['jabatan',    <?php echo $jumlah_jabatan;?>],
+>>>>>>> 3885fef4adba379959f60a4c5fae6718875856c4
          
           
         ]);

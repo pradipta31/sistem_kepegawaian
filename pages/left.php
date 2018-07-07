@@ -3,6 +3,7 @@
                     <ul class="nav" id="side-menu">
                         <li>
 <?php  
+
 if ($level=='PIMPINAN') {
 ?>
 <!-- DISINI MENU HAK AKSES 1 pimpinan
@@ -10,6 +11,12 @@ if ($level=='PIMPINAN') {
  		<li>
             <a href="edit_profil.php"><i class="fa fa-book fa-fw"></i> Edit profil</a>
         </li>
+
+if ($hak_akses=='PIMPINAN') {
+?>
+<!-- DISINI MENU HAK AKSES 1 pimpinan
+ -->
+
          <li>
             <a href="grafik.php"><i class="fa fa-bar-chart-o fa-fw"></i> DATA GRAFIK</a>
         </li>
@@ -33,7 +40,11 @@ if ($level=='PIMPINAN') {
              <a href="lap_pensiun.php"><i class="fa fa-book fa-fw"></i> Laporan Pegawai Pensiun</a>
              </ul>
 <?php
+
 }else if ($level=='PETUGAS'){
+
+}else if ($hak_akses=='PETUGAS'){
+
 ?>
 <!-- DISINI MENU HAK AKSES 2 petugas
  -->
@@ -101,13 +112,19 @@ if ($level=='PIMPINAN') {
 ?>
 <!-- DISINI MENU HAK AKSES 3 pegawai
 
- -->
         <li>
              <a href="form_cuti.php"><i class="fa fa-bar-chart-o fa-fw "></i>Tambah Cuti</a>
         </li> 
         <li>
              <a href="cetak-grafik.php"><i class="fa fa-bar-chart-o fa-fw "></i> Laporan Pendapatan Pajak </a>
         </li> 
+        <li>
+             <a href="form_cuti.php"><i class="fa fa-bar-chart-o fa-fw "></i>Tambah Cuti</a>
+        </li>
+        <li>
+             <a href="data_cuti_pegawai.php"><i class="fa fa-table fa-fw "></i> Data Cuti</a>
+        </li>
+        
 <?php
 }
 

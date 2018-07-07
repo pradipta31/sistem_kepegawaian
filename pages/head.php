@@ -6,7 +6,7 @@ if (isset($_SESSION['nip'])) {
     $nip=$_SESSION['nip'];
     $level=$_SESSION['level'];
     $nama_user=$_SESSION['nama_user'];
-    
+    $hak_akses=$_SESSION['hak_akses'];
 }
 ?>
 <!DOCTYPE html>
@@ -72,7 +72,11 @@ if (isset($_SESSION['nip'])) {
                 <ul class="nav navbar-top-links navbar-right">
                 <br>
                 <!-- /.dropdown -->
+<<<<<<< HEAD
                 <b> <?=$level?></b>
+=======
+                <b> <?=$hak_akses?></b>
+>>>>>>> 3885fef4adba379959f60a4c5fae6718875856c4
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>

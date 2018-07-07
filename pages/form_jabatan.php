@@ -84,6 +84,31 @@ include 'left.php';
                                             <option value="Pembina Utama IV/D">Pembina Utama IV/D</option>
                                             </select>
                                             </div>
+                                            <?php  
+                                                $panggil_jbt="SELECT * FROM tb_jbt";
+                                                $sql=mysqli_query($connect,$panggil_jbt);
+                                                while ($hasil=mysqli_fetch_array($sql)) {
+                                            ?>
+                                                <option value="<?=$hasil['nama_jbt']?>"><?=$hasil['nama_jbt']?></option>
+                                            <?php  
+                                                }
+                                            ?>
+                                        </select>
+                                        </div>
+                                        <div class="form-group">
+                                         <label>jgolongan</label>
+                                            <select class="form-control" name="golongan">
+                                            <?php  
+                                                $panggil_gol="SELECT * FROM tb_golongan";
+                                                $sql=mysqli_query($connect,$panggil_gol);
+                                                while ($hasil=mysqli_fetch_array($sql)) {
+                                            ?>
+                                                <option value="<?=$hasil['golongan']?>"><?=$hasil['golongan']?></option>
+                                            <?php  
+                                                }
+                                            ?>
+                                        </select>
+                                        </div>
                                         <div class="form-group">
                                             <label>Tingkat Ijazah</label>
                                             <select class="form-control" name="t_ijazah">

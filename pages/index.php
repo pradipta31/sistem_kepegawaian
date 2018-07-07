@@ -102,10 +102,6 @@ if (isset($_POST['simpan'])) {
 					$_SESSION['PETUGAS']=$cek['level'];
 					$_SESSION['PEGAWAI']=$cek['level'];
                     $_SESSION['nama_user']=$cek['nama'];
-                    $_SESSION['level']=$cek['level'];
-					$_SESSION['PIMPINAN']=$data['kode_user'];
-					$_SESSION['PETUGAS']=$data['kode_user'];
-					$_SESSION['PEGAWAI']=$data['kode_user'];
                     echo"<script>alert('Login Berhasil');document.location='home.php';</script>";
                 }else{
                     echo"<script>alert('Login Gagal, NIP atau Password salah !')</script>";                                
